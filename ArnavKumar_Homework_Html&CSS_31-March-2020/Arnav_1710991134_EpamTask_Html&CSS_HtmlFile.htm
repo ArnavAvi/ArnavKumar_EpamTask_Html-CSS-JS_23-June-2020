@@ -1,0 +1,172 @@
+<!DOCtype html>
+<html>
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>    
+        
+<script>
+function log() {
+    var uname = document.getElementById("username").value;
+    var pswd = document.getElementById("password").value;
+    if(uname==''||pswd=='') {
+        alert("Feild(s) can not be empty");
+    }
+    else if(uname=='hey@epam.com' && pswd=='epam')
+        {
+            addToLocalStore(uname,pswd);
+            window.confirm("Welcome Epam, Login sucessful!");
+        }
+    else {
+        alert(uname+'/'+pswd+" is not correct");
+    }
+}
+    function epam(){
+        alert('Hi epam,Incase you lost credentials kindly see that from github readme file. Then enter credentials above and sign in');
+    }
+    function cancel() {
+        if (confirm("Are you sure you want to cancel!")) {
+            window.localStorage.clear();    
+            location.reload();
+        } else {
+
+        }
+
+    }
+    function addToLocalStore(p1,p2) {
+        alert(p1+':'+p2);
+        window.localStorage.setItem(p1,p2);
+    }
+    
+</script>    
+    
+<style>
+    
+    .divParent {
+        margin: auto;
+        margin-top: 2%;
+        width: 50%;
+        border: 1px solid black;
+        border-radius: 15px;
+    }
+    .header1 {
+        color: aliceblue;
+        background-color: aqua;
+        font-size:20px;
+        height:20%;
+        text-align: center;
+        margin-top: 2%;
+    }
+    .header1 i {
+        position: relative;
+        left: 50px;
+    }
+    .textFields {
+        
+    }
+    .MyButton {
+        background-color: aqua;
+        width: 170px;
+        font-family: inherit;
+        border-radius: 8px;
+    }
+    h5 {
+        width: 100%; 
+        text-align: center; 
+        border-bottom: 1px solid #000; 
+        line-height: 0.1em;
+        margin: 10px 0 20px; 
+    } 
+    h5 span { 
+        background:#fff; 
+        padding:0 10px;  
+    }
+    .facebookButton {
+        background-color: blue;
+        color: white;
+        width: 170px;
+        border-radius: 8px;
+    }
+    .googleButton {
+        background-color: brown;
+        color: white;
+        width: 170px; 
+        border-radius: 8px;
+        margin-top: 1%;
+    }
+    .epamButton {
+        background-color: olivedrab;
+        color: white;
+        width: 170px; 
+        margin: 1%;
+        border-radius: 8px;
+    }
+    .divCenter {
+        text-align: center;
+        padding: 10px;
+    }
+    .icon-search {
+    height:32px;
+    width:32px;
+    border: none;
+    cursor: pointer;
+    color:black;
+    background-color:pink;
+    position:relative;
+    }
+    .inputBlock i{
+    position: relative;
+    right: 18px
+    }
+    .inputBlock {
+        text-align: center;
+        margin: 2%;
+    }
+    .forgetPswd {
+        position: relative;
+        left: -20px;
+    }
+    .register {
+        position: relative;
+        left: 2px;
+    }
+    #diploma {
+        position: relative;
+        left: -50px;
+    }
+    
+</style>    
+</head>
+    
+<body>
+    <div class="divParent">
+<div class="header1"><i id="diploma" class="fas fa-graduation-cap"></i>Sign In<i onclick="cancel()" class="far fa-times-circle"></i></div>
+    <div class="inputBlock" style="">
+        <input id="username" type="text" placeholder=" mail@example.com"><i class="far fa-envelope"></i><br><br>
+        <input id="password" type="password" placeholder="password"><i class="fas fa-unlock-alt"></i><br><br>
+        <input class="MyButton" onclick="log()" type="button" value="Sign in">
+        <div class="dd">
+        <a class="forgetPswd">Forgot password?</a><a class="register">Register</a>
+        </div>
+        </div>
+    <h5><span>OR</span></h5>
+    <div class="divCenter">
+    
+        <button class="facebookButton"><i class="fab fa-facebook-f"></i></button><br>
+        <button class="googleButton"><i class="fab fa-google"></i></button><br><br>
+        <button class="epamButton" onclick="epam()">EPAM LOGIN </button><br><br>
+    
+    </div>
+    </div>
+</body>    
+</html>
